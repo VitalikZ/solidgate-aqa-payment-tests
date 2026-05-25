@@ -1,5 +1,7 @@
 # Solidgate AQA test framework
 
+[![Tests](https://github.com/VitalikZ/solidgate-aqa-payment-tests/actions/workflows/test.yml/badge.svg)](https://github.com/VitalikZ/solidgate-aqa-payment-tests/actions/workflows/test.yml)
+
 Java + Selenide + TestNG. Покриває створення Payment Page, оплату через UI та верифікацію ордера через `/status`.
 
 ## Стек
