@@ -75,12 +75,18 @@ Gradle сам підхопить `.env` у тестове оточення. Оч
 
 ## Звіти
 
-```bash
-./gradlew test allureReport
-./gradlew allureServe
+Gradle HTML (генерується кожним `./gradlew test`):
+```
+build/reports/tests/test/index.html
 ```
 
-Або відкрити `build/reports/tests/test/index.html` (Gradle HTML report).
+Allure HTML:
+```bash
+./gradlew test allureReport
+open build/reports/allure-report/allureReport/index.html
+```
+
+У CI: артефакт `allure-report` доступний на сторінці Actions run - завантажити zip і відкрити `index.html`.
 
 ## Інші браузери
 

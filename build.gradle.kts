@@ -1,6 +1,6 @@
 plugins {
     java
-    id("io.qameta.allure") version "2.12.0"
+    id("io.qameta.allure") version "4.0.2"
 }
 
 group = "com.solidgate.aqa"
@@ -53,19 +53,6 @@ dependencies {
 
     testImplementation("org.testng:testng:$testngVersion")
     testImplementation("io.qameta.allure:allure-testng:$allureVersion")
-}
-
-allure {
-    version = allureVersion
-    adapter {
-        autoconfigure = true
-        aspectjWeaver = true
-        frameworks {
-            testng {
-                adapterVersion = allureVersion
-            }
-        }
-    }
 }
 
 tasks.test {
