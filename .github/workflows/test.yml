@@ -54,7 +54,7 @@ jobs:
           ./gradlew test allureReport \
             -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} \
             -Dheadless=${{ github.event.inputs.headless || 'true' }} \
-            --no-daemon
+            --no-daemon --no-build-cache
 
       - name: Upload test reports
         if: always()
