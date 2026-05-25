@@ -51,10 +51,10 @@ jobs:
           SOLIDGATE_MERCHANT_ID: ${{ secrets.SOLIDGATE_MERCHANT_ID }}
           SOLIDGATE_SECRET_KEY: ${{ secrets.SOLIDGATE_SECRET_KEY }}
         run: |
-          ./gradlew test \
+          ./gradlew test allureReport \
             -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} \
             -Dheadless=${{ github.event.inputs.headless || 'true' }} \
-            --no-daemon --info
+            --no-daemon
 
       - name: Upload test reports
         if: always()
@@ -67,19 +67,10 @@ jobs:
             build/selenide-reports
           retention-days: 14
 
-      - name: Upload Allure results
+      - name: Upload Allure report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
-          path: build/allure-results
+          name: allure-report
+          path: build/reports/allure-report
           retention-days: 14
-
-      - name: Generate Allure report
-        if: always()
-        uses: simple-elf/allure-report-action@v1.12
-        with:
-          allure_results: build/allure-results
-          allure_report: build/allure-report
-          gh_pages: gh-pages
-          allure_history: allure-history
