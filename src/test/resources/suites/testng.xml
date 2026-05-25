@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Solidgate AQA Suite" verbose="1" parallel="none">
+
+    <listeners>
+        <listener class-name="com.solidgate.aqa.listeners.RetryListener"/>
+    </listeners>
+
+    <test name="Unit tests">
+        <classes>
+            <class name="com.solidgate.aqa.tests.unit.SignatureGeneratorTest"/>
+        </classes>
+    </test>
+
+    <test name="E2E Payment flow">
+        <classes>
+            <class name="com.solidgate.aqa.tests.PaymentFlowTest"/>
+        </classes>
+    </test>
+
+</suite>

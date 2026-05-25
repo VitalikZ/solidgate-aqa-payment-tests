@@ -1,0 +1,44 @@
+# Build outputs
+.gradle/
+build/
+out/
+target/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.project
+.settings/
+.classpath
+nbproject/private/
+
+# Logs
+*.log
+logs/
+
+# Test outputs
+allure-results/
+allure-report/
+test-output/
+test-results/
+screenshots/
+videos/
+
+# Secrets
+.env
+.env.local
+*.pem
+*.p12
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Lombok
+.lombok/
+
+# AI
+/docs
